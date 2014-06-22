@@ -31,10 +31,7 @@ revealjs:
 
 ## Who
 
-
-```
-Error: object 'opts_current' not found
-```
+<iframe src=' assets/fig/rick.html ' scrolling='no' frameBorder='0' seamless class='rChart polycharts ' id=iframe- chart5e2766b3b5df ></iframe> <style>iframe.rChart{ width: 100%; height: 400px;}</style>
 
 <p> <br> <font size="5">&#8595 Where</font> </p>
 

@@ -32,6 +32,7 @@ revealjs:
 ## Who
 
 ```{r rick, results = 'asis', comment = NA, message = F, echo = F}
+require(knitr)
 require(rCharts)
 infoKH <- data.frame(item=c('Born on:', 'Father of:', 'Hobbies:', 'Interests;', 'Education:'),
                      score=c('30 January 1979', 'Jack', 'Reproducible research', 'Technology, Soccer, Horse racing...', 'BSc (Hons), MASt'),
