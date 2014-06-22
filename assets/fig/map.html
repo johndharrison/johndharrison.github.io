@@ -21,10 +21,10 @@
   </head>
   <body >
     
-    <div id = 'chart5e275b61ec71' class = 'rChart leaflet'></div>    
+    <div id = 'chart66be461f9d2a' class = 'rChart leaflet'></div>    
     <script>
   var spec = {
- "dom": "chart5e275b61ec71",
+ "dom": "chart66be461f9d2a",
 "width":            700,
 "height":            250,
 "urlTemplate": "http://{s}.tile.osm.org/{z}/{x}/{y}.png",
@@ -32,9 +32,9 @@
  "attribution": "Map data<a href=\"http://openstreetmap.org\">OpenStreetMap</a>\n         contributors, Imagery<a href=\"http://mapbox.com\">MapBox</a>" 
 },
 "provider": "Stamen.TonerBackground",
-"center": [             54,            -18 ],
-"zoom":              2,
-"id": "chart5e275b61ec71" 
+"center": [           53.2,          -6.15 ],
+"zoom":              1,
+"id": "chart66be461f9d2a" 
 }
 
   var map = L.map(spec.dom, spec.mapOpts)
@@ -48,27 +48,54 @@
     }
      
     L
-  .marker([])
-  .addTo( map )
-  .bindPopup("London, England <p><a href='http://en.wikipedia.org/wiki/Reykjav%C3%ADk'> Home </a>")
-L
-  .marker([])
-  .addTo( map )
-  .bindPopup("Cambridge, England <p><a href='http://www.columbia.edu'> Studied </a>")
-L
   .marker([
- 59.348,
-18.024 
+ 52.668,
+-8.6305 
 ])
   .addTo( map )
-  .bindPopup("Stockholm, Sweden <p><a href=\"http://www.visitstockholm.com/\"> Born </a>")
+  .bindPopup("Limerick, Ireland <p><a href='http://en.wikipedia.org/wiki/Limerick'>Born: Limerick City Ireland</a>")
 L
   .marker([
- 63.431,
-10.395 
+ 51.528,
+-0.10234 
 ])
   .addTo( map )
-  .bindPopup("Trondheim, Norway <p><a href='http://www.marintek.no'> Research Cooperation </a>")
+  .bindPopup("City University, London, England <p><a href='http://en.wikipedia.org/wiki/City_University_London'>BSc Actuarial Science</a>")
+L
+  .marker([
+ 52.204,
+0.11491 
+])
+  .addTo( map )
+  .bindPopup("Cambridge University, Cambridge, England <p><a href='http://en.wikipedia.org/wiki/University_of_Cambridge'>MASt (Master of Advanced Study) degree Mathematics</a>")
+L
+  .marker([
+ 51.522,
+-0.090466 
+])
+  .addTo( map )
+  .bindPopup("Cass Business School, London, England <p><a href='http://en.wikipedia.org/wiki/Cass_Business_School'>Studied for Phd and Lecturer.</a>")
+L
+  .marker([
+ 22.199,
+113.54 
+])
+  .addTo( map )
+  .bindPopup("Macau <p><a href='http://en.wikipedia.org/wiki/Macau'>Work related.</a>")
+L
+  .marker([
+ 22.396,
+114.11 
+])
+  .addTo( map )
+  .bindPopup("Hong Kong <p><a href='http://en.wikipedia.org/wiki/Macau'>Work related.</a>")
+L
+  .marker([
+ 16.443,
+100.35 
+])
+  .addTo( map )
+  .bindPopup("Phichit, Thailand <p><a href='http://en.wikipedia.org/wiki/Macau'>House.</a>")
     
     
     

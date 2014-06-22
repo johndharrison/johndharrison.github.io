@@ -17,7 +17,7 @@ revealjs:
 --- #cover
 <script> .reveal section img {   border: 0px solid #333333; } .grow img {   width: 30px;   -webkit-filter: grayscale(100%);   -webkit-filter: brightness(40%);    -webkit-transition: all 1s ease;      -moz-transition: all 1s ease;        -o-transition: all 1s ease;       -ms-transition: all 1s ease;           transition: all 1s ease; }  .grow img:hover {   -webkit-filter: grayscale(0%);   -webkit-filter: brightness(0%);   width: 90px; } </script>
 
-## Resumé
+## Résumé
 <p>
 ### John Harrison
 <font size="4">my life in a few HTML slides, automatically generated in R</font>
@@ -46,6 +46,7 @@ r1$guides(y=list(title=""),x=list(title=""))
 r1
 ```
 
+<font size="4">reload maybe needed to see chart on firefox</font>
 <p> <br> <font size="5">&#8595 Where</font> </p>
 
 *** 
@@ -58,23 +59,30 @@ require(knitr)
 require(ggplot2)
 require(ggmap)
 require(plyr)
-cities <- c('London, England', 'Cambridge, England', 'Stockholm, Sweden', 'Trondheim, Norway')
-places <- c('Asmundarsafn, Reykjavik, Iceland', 'Cambridge University, Cambridge, England', 'Karolinska, Stockholm, Sweden', 'Trondheim, Norway')
+cities <- c('Limerick, Ireland', 'London, England', 'Cambridge, England', 'Cass Business School', 'Macau', 'Hong Kong', 'Phichit, Thailand')
+places <- c('Limerick, Ireland', 'City University, London, England', 'Cambridge University, Cambridge, England'
+            , 'Cass Business School, London, England', 'Macau', 'Hong Kong', 'Phichit, Thailand')
 
 # get coordinate of each city using ggmap::geocode
 positions <- llply(.data=places, .fun=geocode)
 names(positions) <- substr(cities, 1, 3)
 map <- Leaflet$new()
 map$tileLayer(provider = 'Stamen.TonerBackground')
-map$setView(c(54,-18), zoom = 2)
-map$marker(c(positions$Rey$lat, positions$Rey$lon),
-            bindPopup = paste(cities[1],"<p><a href='http://en.wikipedia.org/wiki/Reykjav%C3%ADk'> Home </a>"))
-map$marker(c(positions$New$lat, positions$New$lon),
-            bindPopup = paste(cities[2],"<p><a href='http://www.columbia.edu'> Studied </a>"))
-map$marker(c(positions$Sto$lat, positions$Sto$lon),
-            bindPopup = paste(cities[3],'<p><a href="http://www.visitstockholm.com/"> Born </a>'))
-map$marker(c(positions$Tro$lat, positions$Tro$lon),
-            bindPopup = paste(cities[4],"<p><a href='http://www.marintek.no'> Research Cooperation </a>"))
+map$setView(c(53.2,-6.15), zoom = 1)
+map$marker(c(positions$Lim$lat, positions$Lim$lon),
+            bindPopup = paste(cities[1],"<p><a href='http://en.wikipedia.org/wiki/Limerick'>Born: Limerick City Ireland</a>"))
+map$marker(c(positions$Lon$lat, positions$Lon$lon),
+            bindPopup = paste(places[2],"<p><a href='http://en.wikipedia.org/wiki/City_University_London'>BSc Actuarial Science</a>"))
+map$marker(c(positions$Cam$lat, positions$Cam$lon),
+            bindPopup = paste(places[3],"<p><a href='http://en.wikipedia.org/wiki/University_of_Cambridge'>MASt (Master of Advanced Study) degree Mathematics</a>"))
+map$marker(c(positions$Cas$lat, positions$Cas$lon),
+            bindPopup = paste(places[4],"<p><a href='http://en.wikipedia.org/wiki/Cass_Business_School'>Studied for Phd and Lecturer.</a>"))
+map$marker(c(positions$Mac$lat, positions$Mac$lon),
+            bindPopup = paste(places[5],"<p><a href='http://en.wikipedia.org/wiki/Macau'>Work related.</a>"))
+map$marker(c(positions$Hon$lat, positions$Hon$lon),
+            bindPopup = paste(places[6],"<p><a href='http://en.wikipedia.org/wiki/Macau'>Work related.</a>"))
+map$marker(c(positions$Phi$lat, positions$Phi$lon),
+            bindPopup = paste(places[7],"<p><a href='http://en.wikipedia.org/wiki/Macau'>House.</a>"))
 map$set(width=700, height=250)
 map
 # map$show('inline')
@@ -97,6 +105,7 @@ r1$guides(y=list(title="Degree of knowledge"),x=list(title=""))
 r1
 ```
 
+<font size="4">reload maybe needed to see chart on firefox</font>
 <p><br> &#8595 </p>
 
 ***
@@ -137,10 +146,10 @@ Courses in:
 
 ## Jobs
 
-- *Private Fund (current job)*
-  - <font size=6>Ran Hedge fund betting into Asian Handicap Football markets (2007-2011)</font>
+- *Private Fund (2007 - 2011)*
+  - <font size=6>Ran Hedge fund betting into Asian Handicap Football markets</font>
 - *SmartOdds (2003-2007)*
-  - <font size=6>Co-Founder of [smartodds](http://www.smartodds.co.uk/). Head of quantative analysis.</font>
+  - <font size=6>Co-Founder of [smartodds](http://www.smartodds.co.uk/). Head of quantitative analysis.</font>
 - *Cass Business School London (2002-2005)*
   - <font size=6>Lecturer in Actuarial Statistics and Financial Mathematics</font>
 - *Goldman Sachs (2003-2004)*
@@ -163,7 +172,7 @@ Courses in:
 - Python, JavaScript, HTML and CSS
 - Java, C, C++, Node.js, d3.js
 - Older tech Excel, VBA
-- Github, Agile project management(pivotal tracker etc.), continuuous integration via travis CI.
+- Github, Agile project management(pivotal tracker etc.), continuous integration via travis CI.
 
 ***
 ## Extra skills and Hobbies
@@ -179,17 +188,28 @@ Courses in:
 
 --- &vertical
 
-## Examples 
+#### Examples 
 
-Examples here
+<font size="2">ggplot2 example on running on shiny server on digital ocean</font>
+[See blog article](http://johndharrison.blogspot.co.uk/2014/03/rstudioshiny-server-on-digital-ocean.html)
+##### 
+
+<iframe src="http://128.199.255.233:3838/userApps/john/rgraphs-elance/"  width="1000" height="800"></iframe>
 
 ***
 
 another example
+<font size="2">RSelenium testapp running on shiny server on digital ocean</font>
+
+[RSelenium test app](https://github.com/ropensci/RSelenium/tree/master/inst/apps/shinytestapp)
+
+<iframe src="http://128.199.255.233:3838/userApps/john/shinytestapp/"  width="1000" height="800"></iframe>
 
 --- #social
 
-## Twitter and mail
+## Email
+
+johndharrison0@gmail.com
 
 </script>
 
