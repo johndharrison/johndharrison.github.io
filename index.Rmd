@@ -68,7 +68,7 @@ positions <- llply(.data=places, .fun=geocode)
 names(positions) <- substr(cities, 1, 3)
 map <- Leaflet$new()
 map$tileLayer(provider = 'Stamen.TonerBackground')
-map$setView(c(53.2,-6.15), zoom = 1)
+map$setView(c(53.2,26.15), zoom = 2)
 map$marker(c(positions$Lim$lat, positions$Lim$lon),
             bindPopup = paste(cities[1],"<p><a href='http://en.wikipedia.org/wiki/Limerick'>Born: Limerick City Ireland</a>"))
 map$marker(c(positions$Lon$lat, positions$Lon$lon),
@@ -83,11 +83,10 @@ map$marker(c(positions$Hon$lat, positions$Hon$lon),
             bindPopup = paste(places[6],"<p><a href='http://en.wikipedia.org/wiki/Macau'>Work related.</a>"))
 map$marker(c(positions$Phi$lat, positions$Phi$lon),
             bindPopup = paste(places[7],"<p><a href='http://en.wikipedia.org/wiki/Macau'>House.</a>"))
-map$set(width=700, height=250)
+map$set(width=700, height=450)
 map
 # map$show('inline')
 ```
-<font size="4"> Use backspace to go back to map </font>  
 
 --- &vertical
 
@@ -188,9 +187,7 @@ Courses in:
 
 --- &vertical
 
-#### Examples 
-
-<font size="2">ggplot2 example on running on shiny server on digital ocean</font>
+<font size="2">ggplot2 example running on shiny server on digital ocean</font><br>
 [See blog article](http://johndharrison.blogspot.co.uk/2014/03/rstudioshiny-server-on-digital-ocean.html)
 ##### 
 
@@ -198,8 +195,7 @@ Courses in:
 
 ***
 
-another example
-<font size="2">RSelenium testapp running on shiny server on digital ocean</font>
+<font size="2">RSelenium testapp running on shiny server on digital ocean</font><br>
 
 [RSelenium test app](https://github.com/ropensci/RSelenium/tree/master/inst/apps/shinytestapp)
 
